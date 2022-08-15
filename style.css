@@ -1,0 +1,93 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 62.5%;
+}
+body{
+    background: linear-gradient(to right,#c3dd46, #27d4bab8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* ###############     clock styling       ################# */
+.clock{
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    background: #ffffff80;
+    border: 2px solid black;
+    position: relative;
+}
+.number{
+    --angle: 0;
+    font-size: 3rem;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    transform: rotate(var(--angle));
+}
+.number1{--angle : 30deg}
+.number2{--angle : 60deg}
+.number3{--angle : 90deg}
+.number4{--angle : 120deg;}
+.number5{--angle : 150deg;}
+.number6{--angle : 180deg;}
+.number7{--angle : 210deg;}
+.number8{--angle : 240deg;}
+.number9{--angle : 270deg;}
+.number10{--angle : 300deg;}
+.number11{--angle : 330deg;}
+
+
+
+.clock .hand{
+    --rotation: 0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    background: #000;
+    transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+    transform-origin: bottom;
+    border: 1px solid white;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+.clock .hand.hour{  
+    height: 30%;
+    width: 10px;
+    background: black;
+    z-index: 10;
+} 
+
+.clock .hand.minute{
+    height: 35%;
+    width: 7px;
+    background: black;
+    z-index: 11;
+} 
+ 
+.clock .hand.second{
+    height: 40%;
+    width: 4px;
+    background: rgb(170, 9, 9);
+    z-index: 12;
+}
+.clock::after{
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 50%;
+    height: 20px;
+    width: 20px;
+    background: black;
+    border-radius: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 14;
+}
